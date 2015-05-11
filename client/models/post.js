@@ -13,5 +13,9 @@ angular.module('reddit')
     return $http.post(nodeUrl + '/posts', this);
   };
 
+  Post.show = function(){
+    return $http.get(nodeUrl + '/posts');
+  };
+
   return Post;
 });
