@@ -1,0 +1,15 @@
+.row
+  .col-xs-4
+    form(name='postForm', novalidate)
+      .form-group
+        label(for='title') Post Title
+        input.form-control#title(type='text', name='title', ng-model='post.title')
+      .form-group
+        label(for='link') Link to article
+        input.form-control#link(type='url', name='link', ng-model='post.link')
+      .form-group
+        label(for='password') Password
+        input.form-control#password(type='password', name='password', ng-model='user.password')
+      .form-group
+        button.btn.btn-success(ng-click='submit(post)') Submit Post
+  .col-xs-8
