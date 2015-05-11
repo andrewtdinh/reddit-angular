@@ -11,6 +11,7 @@ nav.navbar.navbar-default(ng-controller='NavCtrl')
       ul.nav.navbar-nav.navbar-right(ng-show='activeUser')
         li: a(ui-sref='home'): i.fa.fa.fa-home &nbsp; Home
         li: a(ui-sref='dashboard'): i.fa.fa.fa-bolt &nbsp; Dashboard
+        li: a(ui-sref='posts.new'): i.fa.fa.fa-plus &nbsp; New Post
         li: button.btn.btn-danger(ng-click='logout()'): i.fa.fa-sign-out &nbsp; {{displayName}}
       ul.nav.navbar-nav.navbar-right(ng-hide='activeUser')
         li: a(ui-sref='home'): i.fa.fa.fa-home &nbsp; Home
