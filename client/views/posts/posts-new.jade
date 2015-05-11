@@ -6,7 +6,10 @@
         input.form-control#title(type='text', name='title', ng-model='post.title')
       .form-group
         label(for='link') Link to article
-        input.form-control#link(type='url', name='link', ng-model='post.link')
+        input.form-control#link(type='url', name='link', ng-model='post.url')
+      .form-group
+        label(for='body') Say your piece
+        textarea.form-control#body(name='body', ng-model='post.body')
       .form-group
         button.btn.btn-success(ng-click='submit(post)') Submit Post
   .col-xs-8
