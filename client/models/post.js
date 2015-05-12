@@ -11,6 +11,7 @@ angular.module('reddit')
   }
 
   Post.prototype.submit = function(){
+    console.info('this: ', this);
     return $http.post(nodeUrl + '/posts', this);
   };
 

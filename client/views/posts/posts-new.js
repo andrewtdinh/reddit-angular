@@ -7,6 +7,7 @@ angular.module('reddit')
     if($scope.photo){
       post.photo = $scope.photo;
     }
+    console.log('post: ', post);
     post.submit(post)
     .then(function(){
       $state.go('posts.list');
