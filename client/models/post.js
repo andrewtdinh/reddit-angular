@@ -6,7 +6,8 @@ angular.module('reddit')
   function Post(obj){
     this.title = obj.title;
     this.url = obj.url;
-    this.body = obj.body
+    this.body = obj.body;
+    this.photo = obj.photo;
   }
 
   Post.prototype.submit = function(){

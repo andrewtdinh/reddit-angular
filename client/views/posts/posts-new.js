@@ -4,6 +4,9 @@ angular.module('reddit')
 .controller('PostsNewCtrl', function($scope, Post, $state){
   $scope.submit = function(o){
     var post = new Post(o);
+    if($scope.photo){
+      post.photo = $scope.photo;
+    }
     post.submit(post)
     .then(function(){
       $state.go('posts.list');
