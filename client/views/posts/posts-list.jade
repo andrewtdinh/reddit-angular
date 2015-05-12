@@ -10,9 +10,9 @@ h4 Posts
             div.postVote {{post.votes}}
             div.down.i.fa.fa-chevron-down.fa-lg(ng-click='downVote(post)')
           td.postPhotoTd
-            img.postPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}')
+            img.postPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}', ng-click='show(post)')
           td
             div.postTitle(ng-click='show(post)') {{post.title}}
-            div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}}
+            div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}} &nbsp; by &nbsp; {{post.author}}
             div.postComment {{post.comments.length}} comment(s)
   .col-xs-6 
