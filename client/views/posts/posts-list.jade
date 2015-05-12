@@ -12,7 +12,7 @@ h4 Posts
           td.postPhotoTd
             img.postPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}')
           td
-            div.postTitle {{post.title}}
+            div.postTitle(ng-click='show(post)') {{post.title}}
             div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}}
             div.postComment {{post.comments.length}} comment(s)
   .col-xs-6 
