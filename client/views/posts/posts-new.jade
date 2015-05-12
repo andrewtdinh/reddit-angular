@@ -1,5 +1,7 @@
+h3 New Post
+
 .row
-  .col-xs-4
+  .col-xs-3
     form(name='postForm', novalidate)
       .form-group
         label(for='title') Post Title
@@ -7,9 +9,21 @@
       .form-group
         label(for='link') Link to article
         input.form-control#link(type='url', name='link', ng-model='post.url')
+      .row
+        .col-xs-8
+          .form-group
+            label(for='photo') Attach optional photo
+            input.form-control#photo(type='file', name='photo')
+        .col-xs-3
+          .form-group#upload
+            label(for='upload')
+            button.btn.btn-success(ng-click='upload()') Upload Photo
+  .col-xs-2
+    img#postPhoto.img-responsive.img-thumbnail
+.row
+  .col-xs-5
       .form-group
         label(for='body') Say your piece
-        textarea.form-control#body(name='body', ng-model='post.body')
+        textarea.form-control#body(rows='6', name='body', ng-model='post.body')
       .form-group
         button.btn.btn-success(ng-click='submit(post)') Submit Post
-  .col-xs-8

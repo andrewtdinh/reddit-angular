@@ -9,4 +9,22 @@ angular.module('reddit')
       $state.go('posts.list');
     });
   };
+
+  $scope.upload = function(){
+    var preview = document.querySelector('#postPhoto');
+    var file    = document.querySelector('input[type=file]').files[0];
+    var reader  = new FileReader();
+
+    reader.onloadend = function () {
+      $scope.photo = preview.src = reader.result;
+      console.info('$scope.photo: ', $scope.photo);
+      // Album.addPhoto(reader.result, $scope.name);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    } else {
+      $scope.photo = '';
+    }
+  };
 });
