@@ -5,8 +5,10 @@ h4 Posts
     table.table.table-hover
       tbody
         tr(ng-repeat='post in posts track by $index')
-          td 
-            #up.i.fa.fa-chevron-up(ng-click='upVote(post)')
+          td.firstCol 
+            #up.i.fa.fa-chevron-up.fa-lg(ng-click='upVote(post)')
             #postVote {{post.votes}}
-            #down.i.fa.fa-chevron-down(ng-click='downVote(post)')
+            #down.i.fa.fa-chevron-down.fa-lg(ng-click='downVote(post)')
+          td
+            img.postPhoto.img-responsive.img-thumbnail(ng-show='post.photo', ng-src='{{post.photo}}')
   .col-xs-6 
