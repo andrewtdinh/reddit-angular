@@ -2,10 +2,10 @@
 
 angular.module('reddit')
 .config(function($stateProvider, $urlRouterProvider){
-  $urlRouterProvider.otherwise('/');
+  $urlRouterProvider.otherwise('/posts');
 
   $stateProvider
-  .state('home', {url: '/', templateUrl: '/views/general/home.html'})
+  .state('home', {url: '/posts', templateUrl: '/views/posts/posts-list.html', controller: 'PostsListCtrl'})
   .state('register', {url: '/register', templateUrl: '/views/users/users.html', controller: 'UsersCtrl'})
   .state('login', {url: '/login', templateUrl: '/views/users/users.html', controller: 'UsersCtrl'})
   .state('posts', {url: '/posts', templateUrl: '/views/posts/posts.html', abstract: true})
