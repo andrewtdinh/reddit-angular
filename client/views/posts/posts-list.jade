@@ -10,7 +10,7 @@ h4 Posts
             div.postVote {{post.votes}}
             div.down.i.fa.fa-chevron-down.fa-lg(ng-click='downVote(post)')
           td.postPhotoTd
-            img.postPhoto.img-responsive.img-thumbnail(ng-show='post.photo', ng-src='{{post.photo}}')
+            img.postPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}')
           td
             div.postTitle {{post.title}}
             div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}}
