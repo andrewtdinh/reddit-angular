@@ -1,16 +1,25 @@
 .row
-  .col-xs-6
+  .col-xs-4
     table.table.table-hover
       tbody
         tr
-          td.firstCol 
+          td.firstColFull 
             div.up.i.fa.fa-chevron-up.fa-lg(ng-click='upVote(post)')
             div.postVote {{post.votes}}
             div.down.i.fa.fa-chevron-down.fa-lg(ng-click='downVote(post)')
           td
             div.postTitle {{post.title}}
-            div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}}
+            div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}} &nbsp; by &nbsp; {{post.author}}
             div.postComment {{post.comments.length}} comment(s)
-  .col-xs-6 
+    h4 Comments     
+    table.table.table-hover
+      tbody
+        tr
+          td(ng-repeat='comment in post.comments')
+            div.postTitle {{post.title}}
+            div.postBy submitted at &nbsp; {{post.createdAt | date: 'yyyy-MM-dd'}} &nbsp; by &nbsp; {{post.author}}
+            div.postComment {   
+    
+  .col-xs-8 
           td.postPhotoTd
-            img.postPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}')
+            img.fullPhoto.img-responsive.img-thumbnail(ng-if='post.photo', ng-src='{{post.photo}}')
